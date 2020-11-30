@@ -6,3 +6,4 @@ https://github.com/JAA459/03-password-generate
 ### Website
 https://jaa459.github.io/03-password-generate/
 ### Screenshot
+![alt text](https://github.com/JAA459/03-password-generate/blob/main/02-Homework/Assets/password-generator-screenshot.png)
