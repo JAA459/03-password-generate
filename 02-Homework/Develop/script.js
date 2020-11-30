@@ -1,3 +1,4 @@
+var instructions = confirm("Welcome to the password generator. Please answer the following questions in order to create your random password!")
 var resultEl = document.querySelector('#password');
 var lengthEL = parseInt(prompt("How many characters would you like your password to be? (More than 7 characters and less then 129 characters)"), 10);
 
@@ -10,7 +11,7 @@ var numberEl = confirm("Would you like for your password to include numbers?");
 var symbolsEl = confirm("would you like for your password to include symbols?");
 var generateEl = document.querySelector('#generate');
 var count = upperEl + lowerEl + numberEl + symbolsEl;
-var typesArr = [{upperEl}, {lowerEl}, {numberEl}, {symbolsEl}].filter
+var myArr = [{upperEl}, {lowerEl}, {numberEl}, {symbolsEl}].filter
 (
   item => Object.values(item)[0]
 );
@@ -23,34 +24,31 @@ var randomPassword = {
   symbolsEl: getRandomSymbol
 };
 
-generateEl.addEventListener('click', () => {
-  lengthEL;
-  upperEl;
-  lowerEl;
-  numberEl;
-  symbolsEl;
+generateEl.addEventListener('click', myFunction); 
 
-  resultEl.innerText = generatePassword(lengthEL, upperEl, lowerEl, numberEl, symbolsEl);
-});
 
-function generatePassword (lengthEL, upperEl, lowerEl, numberEl, symbolsEl) {
-  var generatedPassword = '';
+function myFunction() {
+  resultEl.innerText = generatePassword();
+}
+
+function generatePassword () {
+  var finalPassword = '';
   
-  typesArr;
+  myArr;
 
   if(count === 0) {
     return '';
   }
   
   for(i = 0; i < lengthEL; i += count) {
-    typesArr.forEach(type => {
-      var funcName = Object.keys(type)[0];
+    myArr.forEach(type => {
+      var allFunc = Object.keys(type)[0];
       
-      generatedPassword += randomPassword[funcName]();
+      finalPassword += randomPassword[allFunc]();
       
     });
   }
-  return generatedPassword;
+  return finalPassword;
 }
 
 function getRandomLower() {
@@ -64,7 +62,6 @@ function getRandomUpper() {
 function getRandomNumber() {
   return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
 }
-
 
 function getRandomSymbol() {
   return String.fromCharCode(Math.floor(Math.random() * 15) + 33);
