@@ -1,4 +1,4 @@
-var instructions = confirm("Welcome to the password generator. Please answer the following questions in order to create your random password!")
+var instructions = confirm("Welcome to the password generator. Please answer the following questions in order to create your random password!");
 var resultEl = document.querySelector('#password');
 var lengthEL = parseInt(prompt("How many characters would you like your password to be? (More than 7 characters and less then 129 characters)"), 10);
 
